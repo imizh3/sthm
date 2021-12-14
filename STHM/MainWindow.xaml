@@ -1,0 +1,155 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:STHM" 
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" 
+        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" 
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        x:Class="STHM.MainWindow"
+        mc:Ignorable="d"
+        Title="Phần mềm thu thập số liệu đo đếm công tơ STHM" Height="768" Width="1024" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <dxb:BarManager Grid.ColumnSpan="3" AllowNavigationFromEditorOnTabPress="True" >
+        <dxb:BarManager.Bars>
+            <dxb:Bar x:Name="statusBar" Caption="Status Bar" IsStatusBar="True">
+                <dxb:Bar.DockInfo>
+                    <dxb:BarDockInfo ContainerType="Bottom"/>
+                </dxb:Bar.DockInfo>
+                <dxb:BarStaticItem Content="Bản quyền thuộc về Công Ty Cổ Phần thiết bị STH Việt Nam"/>
+
+                <dxb:BarStaticItem x:Name="stbTaikhoan" Content="Tài khoản đăng nhập:" Alignment="Far"/>
+            </dxb:Bar>
+        </dxb:BarManager.Bars>
+        <Grid Background="#FFC6DCF7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="376*"/>
+                <RowDefinition Height="38"/>
+                <RowDefinition Height="279*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="201"/>
+                <ColumnDefinition Width="537*"/>
+                <ColumnDefinition Width="280"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="AntiqueWhite" Height="80" Margin="0,0,0,0" VerticalAlignment="Top">
+                <Image Source="LOGO.png" />
+            </StackPanel>
+            <dx:UniformStackPanel Orientation="Vertical" Margin="3,80,3,0" VerticalAlignment="Top">
+                <Button Content="ĐỌC SỐ LIỆU" x:Name="btnRun" Click="btnRun_Click" Height="39" Background="#FFA3C3EC" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
+                <Button Content="XEM SỐ LIỆU" x:Name="BtExportData" Click="BtExportData_Click" Height="39" Background="#FFA3C3EC" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top"/>
+            </dx:UniformStackPanel>
+            <dx:UniformStackPanel Margin="3,0,3,5" VerticalAlignment="Bottom" Orientation="Vertical" Grid.Row="2">
+                <Button x:Name="btnStartSchedule" Click="btnStartSchedule_Click" Content="CHẠY LỊCH TỰ ĐỘNG" Height="39" Background="#FFA3C3EC" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button x:Name="btnSetup" Click="btnSetup_Click" Content="CÀI ĐẶT" Height="39" Background="#FFA3C3EC" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button x:Name="btnExitApplication" Click="btnExitApplication_Click" Content="THOÁT" Height="39" Background="#FFA3C3EC" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </dx:UniformStackPanel>
+            <dxg:GridControl x:Name="dtgCommLines" AutoExpandAllGroups="True"  AutoGenerateColumns="None" Grid.Column="1" EnableSmartColumnsGeneration="True" Margin="3" SelectionMode="Row" SelectedItemChanged="dtgCommLines_SelectedItemChanged" >
+                <dxg:GridControl.View>
+                    <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True" AllowEditing="False"/>
+                </dxg:GridControl.View>
+                <dxg:GridControl.Columns>
+                    <dxg:GridColumn FieldName="LINE_ID" GroupIndex="1" Header="Kênh truyền thông"/>
+                    <dxg:GridColumn FieldName="MET_ID" Header="ID"/>
+                    <dxg:GridColumn FieldName="TENDDO" Header="Tên điểm đo"/>
+                    <dxg:GridColumn FieldName="DATALINK_OSN" Header="Mã điểm đo"/>
+                    <dxg:GridColumn FieldName="MET_KEY" Header="Số chế tạo công tơ"/>
+                    <dxg:GridColumn FieldName="MET_TYPE" Header="Loại điểm đo"/>
+                    <dxg:GridColumn FieldName="OUT_STATION_NUMBER" Header="Qutstation/HDLC"/>
+                    <dxg:GridColumn FieldName="CONNECTION_STATUS" Header="Trạng thái kết nối"/>
+                    <dxg:GridColumn FieldName="READING_STATUS" Header="Trạng thái đọc"/>
+                </dxg:GridControl.Columns>
+            </dxg:GridControl>
+            <dxc:ChartControl x:Name="chart1" dx:ThemeManager.ThemeName="Office2013DarkGray" CrosshairEnabled="False" ToolTipEnabled="True" Grid.Column="1" Grid.Row="2" Margin="3,0" Padding="10" MouseMove="chart1_MouseMove">
+                <dxc:ChartControl.ToolTipOptions>
+                    <dxc:ToolTipOptions ShowForPoints="True" ShowForSeries="True" />
+                </dxc:ChartControl.ToolTipOptions>
+                <dxc:ChartControl.Titles>
+                    <dxc:Title Margin="0,10,0,115" Dock="Right" Width="66">
+                        <WrapPanel Orientation="Vertical" Margin="0,0,-10,0">
+                            <CheckBox Name="chPGiao" Foreground="Red" IsChecked="True" FontSize="14" Padding="5,0,10,0" Checked="chPGiao_Checked" Unchecked="chPGiao_Unchecked">
+                                P Giao
+                            </CheckBox>
+                            <CheckBox Name="chPNhan" Foreground="Blue" IsChecked="True" FontSize="14" Padding="5,0,10,0" Unchecked="chPNhan_Unchecked" Checked="chPNhan_Checked">
+                                P Nhận
+                            </CheckBox>
+                            <CheckBox Name="chQGiao" Foreground="Orange" IsChecked="True" FontSize="14" Padding="5,0,10,0" Checked="chQGiao_Checked" Unchecked="chQGiao_Unchecked">
+                                Q Giao
+                            </CheckBox>
+                            <CheckBox Name="chQNhan" Foreground="Green" IsChecked="True" FontSize="14" Padding="5,0,10,0" Unchecked="chQNhan_Unchecked" Checked="chQNhan_Checked">
+                                Q Nhận
+                            </CheckBox>
+                        </WrapPanel>
+                    </dxc:Title>
+                </dxc:ChartControl.Titles>
+                <dxc:XYDiagram2D x:Name="diagram1" EnableAxisXNavigation="True" EnableAxisYNavigation="True" >
+                    <dxc:XYDiagram2D.AxisY>
+                        <dxc:AxisY2D GridLinesMinorVisible="True">
+                            <dxc:AxisY2D.Title>
+                                <dxc:AxisTitle Content="(Kwh)" Alignment="Far" FontSize="10" Padding="0"/>
+                            </dxc:AxisY2D.Title>
+                        </dxc:AxisY2D>
+                    </dxc:XYDiagram2D.AxisY>
+                    <dxc:XYDiagram2D.AxisX>
+                        <dxc:AxisX2D GridLinesVisible="True" >
+                            <dxc:AxisX2D.Title>
+                                <dxc:AxisTitle Content="(Chu kỳ)" Alignment="Far" FontSize="10" Padding="0"/>
+                            </dxc:AxisX2D.Title>
+                        </dxc:AxisX2D>
+                    </dxc:XYDiagram2D.AxisX>
+                    <dxc:XYDiagram2D.DefaultPane>
+                        <dxc:Pane DomainBrush="Transparent" />
+                    </dxc:XYDiagram2D.DefaultPane>
+                    <dxc:XYDiagram2D.NavigationOptions>
+                        <dxc:NavigationOptions 
+                             UseKeyboard="True"
+                             UseScrollBars="True"
+                             UseMouse="True"
+                             UseTouchDevice="True"/>
+                    </dxc:XYDiagram2D.NavigationOptions>
+                    <dxc:XYDiagram2D.Series>
+                        <dxc:LineSeries2D Name="linePGiao"  Visible="{Binding ElementName=chPGiao, Path=IsChecked}" Brush="Red" DisplayName="P giao" MarkerVisible="False" ArgumentDataMember="CK" ValueDataMember="W">
+                            <dxc:LineSeries2D.LineStyle>
+                                <dxc:LineStyle Thickness="2" />
+                            </dxc:LineSeries2D.LineStyle>
+                        </dxc:LineSeries2D>
+                        <dxc:LineSeries2D Name="linePNhan"  Visible="{Binding ElementName=chPNhan, Path=IsChecked}" Brush="Blue" DisplayName="P nhận" MarkerVisible="False" ArgumentDataMember="CK" ValueDataMember="W">
+                            <dxc:LineSeries2D.LineStyle>
+                                <dxc:LineStyle Thickness="2" />
+                            </dxc:LineSeries2D.LineStyle>
+
+                        </dxc:LineSeries2D>
+                        <dxc:LineSeries2D Name="lineQGiao"   Visible="{Binding ElementName=chQGiao, Path=IsChecked}" Brush="#FFFF9700" DisplayName="Q giao" MarkerVisible="False" ArgumentDataMember="CK" ValueDataMember="W">
+                            <dxc:LineSeries2D.LineStyle>
+                                <dxc:LineStyle Thickness="2" />
+                            </dxc:LineSeries2D.LineStyle>
+
+                        </dxc:LineSeries2D>
+                        <dxc:LineSeries2D Name="lineQNhan"  Visible="{Binding ElementName=chQNhan, Path=IsChecked}" Brush="Green" DisplayName="Q nhận" MarkerVisible="False" ArgumentDataMember="CK" ValueDataMember="W">
+                            <dxc:LineSeries2D.LineStyle>
+                                <dxc:LineStyle Thickness="2" />
+                            </dxc:LineSeries2D.LineStyle>
+
+                        </dxc:LineSeries2D>
+                    </dxc:XYDiagram2D.Series>
+                </dxc:XYDiagram2D>
+
+            </dxc:ChartControl>
+
+            <Grid x:Name="grLog" Grid.Column="2" Grid.RowSpan="3" Margin="3,0,0,0">
+                <RichTextBox x:Name="rtbLog1" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" >
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text=""/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </Grid>
+            <dxe:ComboBoxEdit x:Name="cboTASKNAME" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="219" Grid.Column="1" Grid.Row="1"/>
+            <dxe:DateEdit x:Name="dtpickerStartfrom" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="178" MaskUseAsDisplayFormat="True" MinValue="01/01/2021 00:00:00" Grid.Column="1" Grid.Row="1" EditValueChanged="dtpickerStartfrom_EditValueChanged" MaskBeepOnError="True" Mask="dd/MM/yyyy hh:mm tt" MaskType="DateTimeAdvancingCaret"/>
+            <Button x:Name="btnXem" Content="Xem" Grid.Column="1" Margin="438,10,0,0" Grid.Row="1" Background="#FFA3C3EC" Click="btnXem_Click" HorizontalAlignment="Left" Width="75" Height="22" VerticalAlignment="Top"/>
+        </Grid>
+    </dxb:BarManager>
+</Window>

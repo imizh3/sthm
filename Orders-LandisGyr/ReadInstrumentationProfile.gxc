@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGXDLMSDevice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GXDLMSDevice>
+    <PhysicalAddress xsi:type="xsd:unsignedInt">00000001</PhysicalAddress>
+    <LogicalAddress>1</LogicalAddress>
+    <ClientID xsi:type="xsd:unsignedByte">16</ClientID>
+    <StartProtocol>DLMS</StartProtocol>
+    <Name>LG</Name>
+    <Manufacturer>LGZ</Manufacturer>
+    <HDLCAddressing>1</HDLCAddressing>
+    <MediaType>Gurux.Serial.GXSerial</MediaType>
+    <MediaSettings>&lt;Port&gt;COM12&lt;/Port&gt;&lt;StopBits&gt;1&lt;/StopBits&gt;</MediaSettings>
+    <Objects2>
+      <GXDLMSObject xsi:type="GXDLMSProfileGeneric">
+        <Version>1</Version>
+        <ShortName>25200</ShortName>
+        <SourceObjectType>0</SourceObjectType>
+        <LogicalName>1.0.99.1.0.255</LogicalName>
+        <Description>Load profile with recording period 1</Description>
+        <Attributes>
+          <Item xsi:type="GXDLMSAttribute">
+            <Index>5</Index>
+          </Item>
+        </Attributes>
+        <Methods />
+        <Columns>
+          <GXDLMSObject xsi:type="GXDLMSClock">
+            <ShortName>11200</ShortName>
+            <AttributeIndex>2</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>0.0.1.0.0.255</LogicalName>
+            <Description>Clock</Description>
+            <Attributes>
+              <Item xsi:type="GXDLMSAttribute">
+                <Index>2</Index>
+                <Type>DateTime</Type>
+                <UIType>DateTime</UIType>
+              </Item>
+              <Item xsi:type="GXDLMSAttribute">
+                <Index>2</Index>
+                <Type>DateTime</Type>
+                <UIType>DateTime</UIType>
+              </Item>
+            </Attributes>
+            <Methods />
+          </GXDLMSObject>
+          <GXDLMSObject xsi:type="GXDLMSRegister">
+            <ShortName>24600</ShortName>
+            <AttributeIndex>18</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>0.0.96.240.12.255</LogicalName>
+            <Description>Event Number</Description>
+            <Attributes>
+              <Item>
+                <Index>2</Index>
+                <Type>Int32</Type>
+              </Item>
+            </Attributes>
+            <Methods />
+            <Unit>0</Unit>
+          </GXDLMSObject>
+          <GXDLMSObject xsi:type="GXDLMSRegister">
+            <ShortName>39000</ShortName>
+            <AttributeIndex>11</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>1.1.32.7.0.255</LogicalName>
+            <Description>Instantaneous value (except for frequency)</Description>
+            <Attributes>
+              <Item>
+                <Index>2</Index>
+                <Type>Int32</Type>
+              </Item>
+            </Attributes>
+            <Methods />
+			<Scaler>0.01</Scaler>
+            <Unit>0</Unit>
+          </GXDLMSObject>
+          <GXDLMSObject xsi:type="GXDLMSRegister">
+            <ShortName>39200</ShortName>
+            <AttributeIndex>11</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>1.1.52.7.0.255</LogicalName>
+            <Description>Instantaneous value (except for frequency)</Description>
+            <Attributes>
+              <Item>
+                <Index>2</Index>
+                <Type>Int32</Type>
+              </Item>
+            </Attributes>
+            <Methods />
+			<Scaler>0.01</Scaler>
+            <Unit>0</Unit>
+          </GXDLMSObject>
+          <GXDLMSObject xsi:type="GXDLMSRegister">
+            <ShortName>39400</ShortName>
+            <AttributeIndex>11</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>1.1.72.7.0.255</LogicalName>
+            <Description>Instantaneous value (except for frequency)</Description>
+            <Attributes>
+              <Item>
+                <Index>2</Index>
+                <Type>Int32</Type>
+              </Item>
+            </Attributes>
+            <Methods />
+			<Scaler>0.01</Scaler>
+            <Unit>0</Unit>
+          </GXDLMSObject>
+          <GXDLMSObject xsi:type="GXDLMSRegister">
+            <ShortName>39600</ShortName>
+            <AttributeIndex>11</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>1.1.31.7.0.255</LogicalName>
+            <Description>Instantaneous value (except for frequency)</Description>
+            <Attributes>
+              <Item>
+                <Index>2</Index>
+                <Type>Int32</Type>
+              </Item>
+            </Attributes>
+            <Methods />
+			<Scaler>0.01</Scaler>
+            <Unit>0</Unit>
+          </GXDLMSObject>
+          <GXDLMSObject xsi:type="GXDLMSRegister">
+            <ShortName>39800</ShortName>
+            <AttributeIndex>11</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>1.1.51.7.0.255</LogicalName>
+            <Description>Instantaneous value (except for frequency)</Description>
+            <Attributes>
+              <Item>
+                <Index>2</Index>
+                <Type>Int32</Type>
+              </Item>
+            </Attributes>
+            <Methods />
+			<Scaler>0.01</Scaler>
+            <Unit>0</Unit>
+          </GXDLMSObject>
+          <GXDLMSObject xsi:type="GXDLMSRegister">
+            <ShortName>40000</ShortName>
+            <AttributeIndex>11</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>1.1.71.7.0.255</LogicalName>
+            <Description>Instantaneous value (except for frequency)</Description>
+            <Attributes>
+              <Item>
+                <Index>2</Index>
+                <Type>Int32</Type>
+              </Item>
+            </Attributes>
+            <Methods />
+			<Scaler>0.01</Scaler>
+            <Unit>0</Unit>
+          </GXDLMSObject>
+          <GXDLMSObject xsi:type="GXDLMSRegister">
+            <ShortName>29200</ShortName>
+            <AttributeIndex>2</AttributeIndex>
+            <SourceObjectType>0</SourceObjectType>
+            <LogicalName>1.1.13.5.0.255</LogicalName>
+            <Description>Last average 1</Description>
+            <Attributes>
+              <Item>
+                <Index>2</Index>
+                <Type>Int32</Type>
+              </Item>
+            </Attributes>
+            <Methods />
+			<Scaler>0.01</Scaler>
+            <Unit>0</Unit>
+          </GXDLMSObject>
+        </Columns>
+      </GXDLMSObject>
+    </Objects2>
+  </GXDLMSDevice>
+</ArrayOfGXDLMSDevice>

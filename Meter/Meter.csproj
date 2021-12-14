@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAA20133-C4CB-439F-A9FF-674020F97D80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Meter</RootNamespace>
+    <AssemblyName>Meter</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gurux.Common">
+      <HintPath>..\LIB\Gurux.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Gurux.DLMS">
+      <HintPath>..\LIB\Gurux.DLMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Gurux.Net">
+      <HintPath>..\LIB\Gurux.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Gurux.Serial">
+      <HintPath>..\LIB\Gurux.Serial.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptHelper.cs" />
+    <Compile Include="GXDLMSDirector\GXAsyncWork.cs" />
+    <Compile Include="GXDLMSDirector\GXDLMSCommunicator.cs" />
+    <Compile Include="GXDLMSDirector\GXDLMSDevice.cs" />
+    <Compile Include="GXDLMSDirector\GXDLMSDeviceCollection.cs" />
+    <Compile Include="GXDLMSDirector\GXGraphItem.cs" />
+    <Compile Include="GXDLMSDirector\GXGraphItemCollection.cs" />
+    <Compile Include="GXDLMSDirector\GXGroupBy.cs" />
+    <Compile Include="GXDLMSDirector\GXObisCodeGraphItem.cs" />
+    <Compile Include="GXDLMSDirector\GXObisCodeGraphItemCollection.cs" />
+    <Compile Include="GXDLMSDirector\GXValueSerializer.cs" />
+    <Compile Include="GXDLMSDirector\IGXDLMSView.cs" />
+    <Compile Include="GXDLMSDirector\IGXManufacturerExtension.cs" />
+    <Compile Include="GXDLMS\Common\Error.cs" />
+    <Compile Include="GXDLMS\Common\GXDLMSObjectSerializer.cs" />
+    <Compile Include="GXDLMS\Common\GXHelpers.cs" />
+    <Compile Include="GXDLMS\ManufacturerSettings\GXLogWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="STHM\Device\A1700Device.cs" />
+    <Compile Include="STHM\Device\CumulativeTotalsData.cs" />
+    <Compile Include="STHM\Device\ESDLMSDevice.cs" />
+    <Compile Include="STHM\Device\ESMeterDevice.cs" />
+    <Compile Include="STHM\Device\PacketParser.cs" />
+    <Compile Include="STHM\Device\TaskInfo.cs" />
+    <Compile Include="STHM\Media\CheckEndPacketFunc.cs" />
+    <Compile Include="STHM\Media\CommunicationLine.cs" />
+    <Compile Include="STHM\Media\EnumConnectedStatus.cs" />
+    <Compile Include="STHM\Media\EnumWorkingStatus.cs" />
+    <Compile Include="STHM\Media\ESMedia.cs" />
+    <Compile Include="STHM\Media\ESNet.cs" />
+    <Compile Include="STHM\Media\ESSerial.cs" />
+    <Compile Include="STHM\Media\ESSocket.cs" />
+    <Compile Include="STHM\Media\GPRSModemLine.cs" />
+    <Compile Include="STHM\Media\IPPortLine.cs" />
+    <Compile Include="STHM\Media\MediaLog.cs" />
+    <Compile Include="STHM\Media\SerialPortLine.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

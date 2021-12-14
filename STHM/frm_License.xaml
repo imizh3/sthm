@@ -1,0 +1,30 @@
+﻿<Window x:Class="STHM.frm_License"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+        Title="frm_Register" Height="330" Width="500">
+    <Grid Background="#33334b">
+        <Label Content="Product Registration" HorizontalAlignment="Center" Margin="20,30,0,0" Padding="0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <Label Content="ID Number" HorizontalAlignment="Left" Margin="20,90,0,0" Padding="0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <Label Content="Lincese Key" HorizontalAlignment="Left" Margin="20,140,0,0" Padding="0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <dxe:TextEdit x:Name="txtIDNumber" HorizontalAlignment="Left" Margin="133,90,0,0" VerticalAlignment="Top" Width="243" Height="30" />
+        <dxe:TextEdit x:Name="txtLiceseKey" HorizontalAlignment="Left" Margin="133,140,0,0" VerticalAlignment="Top" Width="330" Height="30"/>
+        <Button x:Name="btnRegister" Content="Register" 
+                HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" Width="95" Height="35" 
+                Background="#33334b" Foreground="White" BorderBrush="White" FontSize="16" BorderThickness="2" Click="btnRegister_Click"/>
+        <Button x:Name="btnCopy" Content="Copy" 
+                HorizontalAlignment="Left" Margin="381,90,0,0" VerticalAlignment="Top" Width="82" Height="30" 
+                Background="#33334b" Foreground="White" BorderBrush="White" FontSize="16" BorderThickness="2" Click="btnCopy_Click"/>
+        <Button x:Name="btnStartFreeTrial" Content="Start free trial" 
+                HorizontalAlignment="Stretch" Margin="0,240,0,0" VerticalAlignment="Top" Height="35"
+                Background="#6b5acd" Foreground="White" BorderBrush="White" FontSize="20" BorderThickness="2" FontStyle="Italic" Click="btnStartFreeTrial_Click"/>
+        <Label x:Name="lbFreeTrialLeft" Content="Số ngày dùng thử còn lại:" 
+               HorizontalAlignment="Left" Margin="20,300,0,0" Padding="0" VerticalAlignment="Top" 
+               FontSize="20" Foreground="White" Visibility="Collapsed"/>
+        <Label x:Name="lbDaysLeft" Content="Số ngày" HorizontalAlignment="Left" Margin="260,300,0,0" Padding="0" VerticalAlignment="Top" 
+               FontSize="20" Foreground="Cyan" Visibility="Collapsed"/>
+        <Button x:Name="btnOK" Content="OK" 
+                HorizontalAlignment="Center" Margin="368,300,29,0" VerticalAlignment="Top" Width="95" Height="35" 
+                Background="#33334b" Foreground="White" BorderBrush="White" FontSize="16" BorderThickness="2" Click="btnOK_Click" Visibility="Collapsed"/>
+    </Grid>
+</Window>

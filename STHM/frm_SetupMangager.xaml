@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:local="clr-namespace:STHM" x:Class="STHM.frm_SetupMangager"
+        Title="Cài đặt" Height="768" Width="1024" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <dx:DXTabControl HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+        <dx:DXTabControl.View>
+            <dx:TabControlMultiLineView HeaderLocation="Top" AllowHideTabItems="False" FixedHeaders="True"/>
+        </dx:DXTabControl.View>
+        <dx:DXTabItem Header="Quản lý kênh" HorizontalContentAlignment="Center">
+            <local:controlLineMeter x:Name="ctLineMerter"/>
+        </dx:DXTabItem>
+        <dx:DXTabItem Header="Quản lý lịch đọc tự động" HorizontalContentAlignment="Center">
+            <local:controlSchedule x:Name="ctSchedule"/>
+        </dx:DXTabItem>
+        <dx:DXTabItem Header="Cấu hình đường dẫn" HorizontalContentAlignment="Center">
+            <local:controlConfig x:Name="ctConfig"/>
+        </dx:DXTabItem>
+    </dx:DXTabControl>
+</Window>

@@ -1,0 +1,114 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="STHM.controlLineMeter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Loaded="UserControl_Loaded">
+    <Grid Background="#FFC6DCF7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="69"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GroupBox BorderThickness="0,0,0,0.5">
+            <Grid>
+                <Button Content="Đóng" x:Name="btnClose" Click="btnClose_Click" HorizontalAlignment="Left" Background="#FFA3C3EC" Margin="38,15,0,0" VerticalAlignment="Top" Width="114" Height="36"/>
+                <!--<Label Content="Lưu ý: Sau khi cập nhật danh sách kênh và công tơ, Khởi động lại phần mềm đọc số liệu" HorizontalAlignment="Left" Margin="208,24,0,0" VerticalAlignment="Top" Width="492" Height="26"/>-->
+            </Grid>
+        </GroupBox>
+        <dxlc:DockLayoutControl Grid.Row="1">
+            <Grid Background="#FFC6DCF7" Width="400" dxlc:DockLayoutControl.AllowHorizontalSizing="True" dxlc:DockLayoutControl.AllowVerticalSizing="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="602*"/>
+                    <RowDefinition Height="52"/>
+                </Grid.RowDefinitions>
+                <Label Content="Kênh truyền thông" Margin="148,3,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="111"/>
+                <dxg:GridControl x:Name="dtgDanhsachkenh"  AutoGenerateColumns="None" EnableSmartColumnsGeneration="False" Grid.Row="1" SelectionMode="Row">
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn Header="ID" Width="50" FieldName="LINE_ID" AutoFilterCondition="Contains" ReadOnly="True"/>
+                        <dxg:GridColumn Header="Thông tin cấu hình" Width="280" FieldName="CONFIG" AutoFilterCondition="Contains" ReadOnly="True"/>
+                    </dxg:GridControl.Columns>
+                    <dxg:GridControl.View>
+                        <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True" ShowGroupPanel="False" ShowAutoFilterRow="True"/>
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+                <Button Content="Thêm" x:Name="btnAddLine" Click="btnAddLine_Click" HorizontalAlignment="Left" Background="#FFA3C3EC" Margin="15,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="106" Height="32"/>
+                <Button Content="Sửa" x:Name="btnEditLine" Click="btnEditLine_Click" HorizontalAlignment="Left" Background="#FFA3C3EC" Margin="138,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="106" Height="32"/>
+                <Button Content="Xóa" x:Name="btnDeleteLine" Click="btnDeleteLine_Click" HorizontalAlignment="Left" Background="#FFA3C3EC" Margin="262,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="106" Height="32"/>
+            </Grid>
+            <Grid Background="#FFC6DCF7" dxlc:DockLayoutControl.Dock="Client" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="602*"/>
+                    <RowDefinition Height="52"/>
+                </Grid.RowDefinitions>
+                <Label Content="Điểm đo công tơ" Margin="263,3,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="105"/>
+                <dxg:GridControl x:Name="dtgDanhsachcongto"   AutoExpandAllGroups="True" AutoGenerateColumns="None" EnableSmartColumnsGeneration="False" Grid.Row="1" SelectionMode="Row">
+                    <dxg:GridControl.View>
+                        <dxg:TableView x:Name="tbvDanhsachcongto" AllowPerPixelScrolling="True" ShowTotalSummary="True" ShowGroupPanel="False" ShowAutoFilterRow="True">
+                        </dxg:TableView>
+                    </dxg:GridControl.View>
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn Header="Kênh" FieldName="COMM_LINE" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center" GroupIndex="0" SortOrder="Ascending">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Số thứ tự" FieldName="MET_ID" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Mã công tơ" FieldName="MET_KEY" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Tên điểm đo" FieldName="TENDDO" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Mã điểm đo" FieldName="DATALINK_OSN" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Mật khẩu đọc" FieldName="PROG_PW" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Outsatation number" FieldName="OUT_STATION_NUMBER" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Baudrate" FieldName="BAUD_RATE" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Loại công tơ" FieldName="MET_TYPE" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="Hệ số nhân" FieldName="TU" AutoFilterCondition="Contains" ReadOnly="True" HorizontalHeaderContentAlignment="Center">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                    </dxg:GridControl.Columns>
+                </dxg:GridControl>
+                <Button Content="Thêm" x:Name="btnAddMeter" Background="#FFA3C3EC" Click="btnAddMeter_Click" HorizontalAlignment="Left" Margin="27,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="106" Height="32"/>
+                <Button Content="Sửa" x:Name="btnEditMeter" Background="#FFA3C3EC" Click="btnEditMeter_Click" HorizontalAlignment="Left" Margin="150,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="106" Height="32"/>
+                <Button Content="Xóa" x:Name="btnDeleteMeter" Background="#FFA3C3EC" Click="btnDeleteMeter_Click" HorizontalAlignment="Left" Margin="274,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="106" Height="32"/>
+                <Button Content="Nhập từ excel" Margin="0,10,26,0" Grid.Row="2" VerticalAlignment="Top" Height="32" Background="#FFA3C3EC" HorizontalAlignment="Right" Width="106"/>
+            </Grid>
+        </dxlc:DockLayoutControl>
+    </Grid>
+</UserControl>

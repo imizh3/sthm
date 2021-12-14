@@ -1,0 +1,12 @@
+﻿Bảng biểu sửa dụng cơ sở dữ liệu Sqlite
+- Project dùng ap dụng Entity Framework 6 Code First để rende database từ mode
+tham khảo: https://docs.microsoft.com/en-us/ef/ef6/
+- Lệnh liên quan : 
+		Add-Migration <tên update> tạo Migrations ánh sạ model -> thay đổi
+		Drop-Database
+		Get-DbContext
+		Get-Migration
+		Remove-Migration
+		Scaffold-DbContext
+		Script-Migration
+		Update-Database update các thay đổi vào db

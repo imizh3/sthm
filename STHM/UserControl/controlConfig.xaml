@@ -1,0 +1,29 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="STHM.controlConfig" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <Grid Background="#FFC6DCF7">
+
+        <dxe:CheckEdit x:Name="chkCommunicationLog" Content="Hiển thị log" HorizontalAlignment="Left" Margin="66,36,0,0" VerticalAlignment="Top"/>
+        <dxe:CheckEdit x:Name="chkOpenFile" Content="Xem số liệu sau khi đọc" HorizontalAlignment="Left" Margin="66,77,0,0" VerticalAlignment="Top"/>
+        <dxe:CheckEdit x:Name="chkAutoRun" Content="Tự động chạy lịch khi khởi động lại" HorizontalAlignment="Left" Margin="66,117,0,0" VerticalAlignment="Top"/>
+        <dxe:TextEdit x:Name="txtScheduleInterval" HorizontalAlignment="Left" Margin="571,55,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label Content="Chu kỳ quét lịch chạy (ms)" HorizontalAlignment="Left" Margin="571,29,0,0" VerticalAlignment="Top" Width="178"/>
+        <dxe:TextEdit x:Name="txtScheduleDelay" HorizontalAlignment="Left" Margin="571,108,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label Content="Thời gian dừng khi đọc lỗi (ms)" HorizontalAlignment="Left" Margin="571,82,0,0" VerticalAlignment="Top" Width="178"/>
+        <dxe:ButtonEdit x:Name="txtScheduleExportFilePath" DefaultButtonClick="txtScheduleExportFilePath_DefaultButtonClick" HorizontalAlignment="Left" Margin="66,202,0,0" VerticalAlignment="Top" Width="683"/>
+        <Label Content="Đường dẫn lưu File đọc tự động" HorizontalAlignment="Left" Margin="66,176,0,0" VerticalAlignment="Top"/>
+        <dxe:ButtonEdit x:Name="txtManualExportFilePath" DefaultButtonClick="txtManualExportFilePath_DefaultButtonClick" HorizontalAlignment="Left" Margin="66,269,0,0" VerticalAlignment="Top" Width="683"/>
+        <Label Content="Đường dẫn lưu File đọc thủ công" HorizontalAlignment="Left" Margin="66,243,0,0" VerticalAlignment="Top"/>
+        <dxe:ButtonEdit x:Name="txtExportDataOldPath" DefaultButtonClick="txtExportDataOldPath_DefaultButtonClick" HorizontalAlignment="Left" Margin="66,337,0,0" VerticalAlignment="Top" Width="683"/>
+        <Label Content="Đường dẫn lưu File đọc thông số nhà máy" HorizontalAlignment="Left" Margin="66,311,0,0" VerticalAlignment="Top"/>
+        <dxe:ComboBoxEdit x:Name="cboformatfile" HorizontalAlignment="Left" Margin="66,402,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Định dạng File" HorizontalAlignment="Left" Margin="66,376,0,0" VerticalAlignment="Top"/>
+        <Button Content="Lưu" x:Name="btnSave" Click="btnSave_Click" Background="#FFA3C3EC" HorizontalAlignment="Left" Margin="403,433,0,0" VerticalAlignment="Top" Width="131" Height="36"/>
+        <Button Content="Hủy" x:Name="btnClose" Click="btnClose_Click" Background="#FFA3C3EC" HorizontalAlignment="Left" Margin="618,433,0,0" VerticalAlignment="Top" Width="131" Height="36"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,20 @@
+Log on
+
+/?001!<CR><LF> [8] 
+
+ [0] 
+
+not answer: /?001!<CR><LF>
+
+Log on
+
+/?001!<CR><LF> [8] 
+
+/GEC5090100301113@000<CR><LF> [23] 
+
+<ACK>051<CR><LF> [6] 
+
+<SOH>P0<STX>(EAB6FA31E096C44B)<ETX>n [24] 
+
+ESMeterDevice: RunTask->Unable to load DLL 'Encryptdll.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)
+
