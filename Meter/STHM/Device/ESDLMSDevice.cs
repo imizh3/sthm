@@ -170,7 +170,7 @@ namespace STHM.Device
             //GXManufacturerCollection.ReadManufacturerSettings(Manufacturers);
             if (deviceType == "LandisGyr")
             {
-                using (TextReader textReader = new StreamReader(System.Windows.Forms.Application.StartupPath + "\\" + "lgz.obx", Encoding.UTF8))
+                using (TextReader textReader = new StreamReader(System.Windows.Forms.Application.StartupPath + "\\" + "Manufacturers"+"\\" + "lgz.obx", Encoding.UTF8))
                 {
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(GXManufacturer));
                     GXManufacturer manus = (GXManufacturer)xmlSerializer.Deserialize(textReader);

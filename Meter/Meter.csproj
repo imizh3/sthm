@@ -91,6 +91,14 @@
     <Compile Include="STHM\Media\MediaLog.cs" />
     <Compile Include="STHM\Media\SerialPortLine.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Encryptdll.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EnvDTE.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
