@@ -1689,90 +1689,60 @@ namespace STHM
                 Directory.CreateDirectory(filepathExportData);
             }
 
-            frm_ReadData fRead = new frm_ReadData();
-            fRead.Title = "Xem Số Liệu";
-            fRead.btnRun.Content = "Xem số liệu";
-            fRead.ShowDialog();
-            if (!fRead.IsRun) return;
+            //frm_ReadData fRead = new frm_ReadData();
+            //fRead.Title = "Xem Số Liệu";
+            //fRead.btnRun.Content = "Xem số liệu";
+            //fRead.ShowDialog();
+            //if (!fRead.IsRun) return;
 
-            foreach (DataRowView indexselected in dtgCommLines.SelectedItems)
-            {
-                string DatalinkOS = indexselected["DATALINK_OSN"].ToString();
-                if (fRead.Taskname.Equals("ReadLoadProfile"))
-                {
-                    //if (chkStartfrom.Checked)
-                    //{
-                    string str = "";
-                    string ngay = "";
-                    string thang2 = "";
-                    for (int i = 1; i <= fRead.udNumDays; i++)
-                    {
-                        str = fRead.StartFrom.AddDays(i - 1).Year.ToString().Substring(fRead.StartFrom.AddDays(i - 1).Year.ToString().Length - 1, 1);
-                        ngay = ((fRead.StartFrom.AddDays(i - 1).Day >= 10) ? fRead.StartFrom.AddDays(i - 1).Day.ToString() : ("0" + fRead.StartFrom.AddDays(i - 1).Day));
-                        thang2 = ((fRead.StartFrom.AddDays(i - 1).Month >= 10) ? fRead.StartFrom.AddDays(i - 1).Month.ToString() : ("0" + fRead.StartFrom.AddDays(i - 1).Month));
-                        string exportfilename2 = ngay + thang2 + str + DatalinkOS;
-                        if (File.Exists(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename2 + ".sthm"))
-                        {
-                            File.Copy(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename2 + ".sthm", filepathExportData + "\\" + exportfilename2 + config.formatfile, overwrite: true);
-                        }
-                    }
-                    continue;
-                    //}
-                    //string str2 = "";
-                    //string ngay3 = "";
-                    //string thang3 = "";
-                    //for (int j = 1; j <= (int)udNumDays.Value; j++)
-                    //{
-                    //    str2 = DateTime.Now.AddDays(j - 1).Year.ToString().Substring(DateTime.Now.AddDays(j - 1).Year.ToString().Length - 1, 1);
-                    //    ngay3 = ((DateTime.Now.AddDays(j - 1).Day >= 10) ? DateTime.Now.AddDays(j - 1).Day.ToString() : ("0" + DateTime.Now.AddDays(j - 1).Day));
-                    //    thang3 = ((DateTime.Now.AddDays(j - 1).Month >= 10) ? DateTime.Now.AddDays(j - 1).Month.ToString() : ("0" + DateTime.Now.AddDays(j - 1).Month));
-                    //    string exportfilename3 = ngay3 + thang3 + str2 + DatalinkOS;
-                    //    if (File.Exists(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename3 + ".sthm"))
-                    //    {
-                    //        File.Copy(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename3 + ".sthm", filepathExportData + "\\" + exportfilename3 + config.formatfile, overwrite: true);
-                    //    }
-                    //}
-                }
-                else
-                {
-                    if (!fRead.Taskname.Equals("ReadLoadProfile_A0"))
-                    {
-                        continue;
-                    }
-                    //if (chkStartfrom.Checked)
-                    //{
-                    string str4 = "";
-                    string ngay4 = "";
-                    string thang4 = "";
-                    for (int l = 1; l <= fRead.udNumDays; l++)
-                    {
-                        str4 = fRead.StartFrom.AddDays(l - 1).Year.ToString().Substring(fRead.StartFrom.AddDays(l - 1).Year.ToString().Length - 1, 1);
-                        ngay4 = ((fRead.StartFrom.AddDays(l - 1).Day >= 10) ? fRead.StartFrom.AddDays(l - 1).Day.ToString() : ("0" + fRead.StartFrom.AddDays(l - 1).Day));
-                        thang4 = ((fRead.StartFrom.AddDays(l - 1).Month >= 10) ? fRead.StartFrom.AddDays(l - 1).Month.ToString() : ("0" + fRead.StartFrom.AddDays(l - 1).Month));
-                        string exportfilename4 = ngay4 + thang4 + str4 + DatalinkOS;
-                        if (File.Exists(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename4 + ".sthm"))
-                        {
-                            File.Copy(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename4 + ".sthm", filepathExportData + "\\" + exportfilename4 + config.formatfile, overwrite: true);
-                        }
-                    }
-                    continue;
-                    //}
-                    //string str3 = "";
-                    //string ngay2 = "";
-                    //string thang = "";
-                    //for (int k = 1; k <= fRead.udNumDays; k++)
-                    //{
-                    //    str3 = DateTime.Now.AddDays(k - 1).Year.ToString().Substring(DateTime.Now.AddDays(k - 1).Year.ToString().Length - 1, 1);
-                    //    ngay2 = ((DateTime.Now.AddDays(k - 1).Day >= 10) ? DateTime.Now.AddDays(k - 1).Day.ToString() : ("0" + DateTime.Now.AddDays(k - 1).Day));
-                    //    thang = ((DateTime.Now.AddDays(k - 1).Month >= 10) ? DateTime.Now.AddDays(k - 1).Month.ToString() : ("0" + DateTime.Now.AddDays(k - 1).Month));
-                    //    string exportfilename = ngay2 + thang + str3 + DatalinkOS;
-                    //    if (File.Exists(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename + ".sthm"))
-                    //    {
-                    //        File.Copy(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename + ".sthm", filepathExportData + "\\" + exportfilename + config.formatfile, overwrite: true);
-                    //    }
-                    //}
-                }
-            }
+            //foreach (DataRowView indexselected in dtgCommLines.SelectedItems)
+            //{
+            //    string DatalinkOS = indexselected["DATALINK_OSN"].ToString();
+            //    if (fRead.Taskname.Equals("ReadLoadProfile"))
+            //    {
+            //        //if (chkStartfrom.Checked)
+            //        //{
+            //        string str = "";
+            //        string ngay = "";
+            //        string thang2 = "";
+            //        for (int i = 1; i <= fRead.udNumDays; i++)
+            //        {
+            //            str = fRead.StartFrom.AddDays(i - 1).Year.ToString().Substring(fRead.StartFrom.AddDays(i - 1).Year.ToString().Length - 1, 1);
+            //            ngay = ((fRead.StartFrom.AddDays(i - 1).Day >= 10) ? fRead.StartFrom.AddDays(i - 1).Day.ToString() : ("0" + fRead.StartFrom.AddDays(i - 1).Day));
+            //            thang2 = ((fRead.StartFrom.AddDays(i - 1).Month >= 10) ? fRead.StartFrom.AddDays(i - 1).Month.ToString() : ("0" + fRead.StartFrom.AddDays(i - 1).Month));
+            //            string exportfilename2 = ngay + thang2 + str + DatalinkOS;
+            //            if (File.Exists(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename2 + ".sthm"))
+            //            {
+            //                File.Copy(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename2 + ".sthm", filepathExportData + "\\" + exportfilename2 + config.formatfile, overwrite: true);
+            //            }
+            //        }
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        if (!fRead.Taskname.Equals("ReadLoadProfile_A0"))
+            //        {
+            //            continue;
+            //        }
+            //        //if (chkStartfrom.Checked)
+            //        //{
+            //        string str4 = "";
+            //        string ngay4 = "";
+            //        string thang4 = "";
+            //        for (int l = 1; l <= fRead.udNumDays; l++)
+            //        {
+            //            str4 = fRead.StartFrom.AddDays(l - 1).Year.ToString().Substring(fRead.StartFrom.AddDays(l - 1).Year.ToString().Length - 1, 1);
+            //            ngay4 = ((fRead.StartFrom.AddDays(l - 1).Day >= 10) ? fRead.StartFrom.AddDays(l - 1).Day.ToString() : ("0" + fRead.StartFrom.AddDays(l - 1).Day));
+            //            thang4 = ((fRead.StartFrom.AddDays(l - 1).Month >= 10) ? fRead.StartFrom.AddDays(l - 1).Month.ToString() : ("0" + fRead.StartFrom.AddDays(l - 1).Month));
+            //            string exportfilename4 = ngay4 + thang4 + str4 + DatalinkOS;
+            //            if (File.Exists(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename4 + ".sthm"))
+            //            {
+            //                File.Copy(System.Windows.Forms.Application.StartupPath + "\\DataBase\\" + exportfilename4 + ".sthm", filepathExportData + "\\" + exportfilename4 + config.formatfile, overwrite: true);
+            //            }
+            //        }
+            //        continue;
+            //    }
+            //}
             Process.Start("explorer.exe", filepathExportData);
         }
 
