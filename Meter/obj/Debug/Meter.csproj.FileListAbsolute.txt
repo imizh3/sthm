@@ -18,3 +18,14 @@ D:\KHACHHANG\VIETIT\DIENLUC\STHMMETER\GitHub\project\sthm\Meter\bin\Debug\Newton
 D:\KHACHHANG\VIETIT\DIENLUC\STHMMETER\GitHub\project\sthm\Meter\obj\Debug\Meter.dll
 D:\KHACHHANG\VIETIT\DIENLUC\STHMMETER\GitHub\project\sthm\Meter\obj\Debug\Meter.pdb
 D:\KHACHHANG\VIETIT\DIENLUC\STHMMETER\GitHub\project\sthm\Meter\obj\Debug\Meter.csprojResolveAssemblyReference.cache
+F:\GitHub\sthm\Meter\bin\Debug\Encryptdll.dll
+F:\GitHub\sthm\Meter\bin\Debug\EnvDTE.dll
+F:\GitHub\sthm\Meter\bin\Debug\Meter.dll
+F:\GitHub\sthm\Meter\bin\Debug\Meter.pdb
+F:\GitHub\sthm\Meter\bin\Debug\Gurux.Common.dll
+F:\GitHub\sthm\Meter\bin\Debug\Gurux.DLMS.dll
+F:\GitHub\sthm\Meter\bin\Debug\Gurux.Net.dll
+F:\GitHub\sthm\Meter\bin\Debug\Gurux.Serial.dll
+F:\GitHub\sthm\Meter\obj\Debug\Meter.csprojResolveAssemblyReference.cache
+F:\GitHub\sthm\Meter\obj\Debug\Meter.dll
+F:\GitHub\sthm\Meter\obj\Debug\Meter.pdb
