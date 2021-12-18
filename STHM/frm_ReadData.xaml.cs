@@ -40,6 +40,7 @@ namespace STHM
             LoadTaskname();
             txtNumDays.EditValue = 1;
             dtpickerStartfrom.EditValue = DateTime.Now;
+            
             cboTASKNAME.Focus();
         }
 
@@ -76,6 +77,20 @@ namespace STHM
             {
                 IsRun = false;
                 common.ShowDialog(ex.Message);
+            }
+        }
+
+        private void cboTASKNAME_EditValueChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (cboTASKNAME.EditValue == "ReadLoadProfile_A0")
+            {
+                dtpickerStartfrom.MaxValue = DateTime.Now;
+                dtpickerStartfrom.EditValue = DateTime.Now.AddDays(-1);
+            }
+            else
+            {
+                dtpickerStartfrom.MaxValue = new DateTime(DateTime.Now.Year, 12, 31);
+                dtpickerStartfrom.EditValue = DateTime.Now;
             }
         }
     }
