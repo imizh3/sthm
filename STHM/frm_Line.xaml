@@ -2,14 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="STHM.frm_Line"
-        Title="Kênh truyền thông" Height="174" Width="319" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Background="Teal">
+        Title="Kênh truyền thông" Height="165" Width="319" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#FFC6DCF7" Margin="0,0,0,1">
 
         <dxe:TextEdit x:Name="txtId" HorizontalAlignment="Left" Margin="66,10,0,0" VerticalAlignment="Top" Width="224"/>
         <dxe:TextEdit x:Name="txtIpAddress" HorizontalAlignment="Left" Margin="66,37,0,0" VerticalAlignment="Top" Width="224" MaskShowPlaceHolders="False" Mask="((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" MaskType="RegEx" MaskUseAsDisplayFormat="True"/>
         <dxe:TextEdit x:Name="txtPort" HorizontalAlignment="Left" Margin="66,64,0,0" VerticalAlignment="Top" Width="224" MaskType="RegEx" Mask="\d*" MaskUseAsDisplayFormat="True" MaskShowPlaceHolders="False"/>
-        <Button Content="_Lưu" x:Name="btnLuu" Click="btnLuu_Click" HorizontalAlignment="Left" Margin="131,93,0,0" VerticalAlignment="Top" Width="79" Height="30"/>
-        <Button Content="_Đóng" x:Name="btnDong" Click="btnDong_Click" HorizontalAlignment="Left" Margin="215,93,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Button Content="_Lưu" x:Name="btnLuu" Click="btnLuu_Click" HorizontalAlignment="Left" Margin="131,93,0,0" VerticalAlignment="Top" Width="79" Height="30" Background="#FFA3C3EC"/>
+        <Button Content="_Đóng" x:Name="btnDong" Click="btnDong_Click" HorizontalAlignment="Left" Margin="215,93,0,0" VerticalAlignment="Top" Width="75" Height="30" Background="#FFA3C3EC"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="44,6,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
         <Label Content="IP" HorizontalAlignment="Left" Margin="44,33,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
         <Label Content="Cổng" HorizontalAlignment="Left" Margin="28,60,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>

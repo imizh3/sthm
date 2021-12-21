@@ -84,7 +84,7 @@ namespace STHM
         {
             if (cboTASKNAME.EditValue == "ReadLoadProfile_A0")
             {
-                dtpickerStartfrom.MaxValue = DateTime.Now;
+                dtpickerStartfrom.MaxValue = DateTime.Now.AddDays(-1);
                 dtpickerStartfrom.EditValue = DateTime.Now.AddDays(-1);
             }
             else
