@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="STHM.frm_ReadData"
         Title="Đọc số liệu" Height="287" Width="267" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Background="Teal">
+    <Grid Background="#FFC6DCF7">
         <dxe:ComboBoxEdit x:Name="cboTASKNAME" HorizontalAlignment="Left" Margin="19,36,0,0" VerticalAlignment="Top" Width="219" EditValueChanged="cboTASKNAME_EditValueChanged" />
         <dxe:TextEdit x:Name="txtNumDays" HorizontalAlignment="Left" Margin="19,89,0,0" VerticalAlignment="Top" Width="219" MaskType="Numeric" Mask="n0" MaskUseAsDisplayFormat="True"/>
         <dxe:DateEdit x:Name="dtpickerStartfrom" HorizontalAlignment="Left" Margin="21,142,0,0" VerticalAlignment="Top" Width="217" MaskUseAsDisplayFormat="True" MinValue="01/01/2021 00:00:00" Mask="dd/MM/yyyy hh:mm tt" MaskType="DateTimeAdvancingCaret"/>
-        <Button Content="Đọc số liệu" x:Name="btnRun" Click="btnRun_Click" HorizontalAlignment="Left" Margin="19,187,0,0" VerticalAlignment="Top" Width="79" Height="30"/>
-        <Button Content="Hủy" x:Name="btnDong" Click="btnDong_Click" HorizontalAlignment="Left" Margin="163,187,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <Button Content="Đọc số liệu" x:Name="btnRun" Click="btnRun_Click" HorizontalAlignment="Left" Margin="19,187,0,0" VerticalAlignment="Top" Width="79" Height="30" Background="#FFA3C3EC"/>
+        <Button Content="Hủy" x:Name="btnDong" Click="btnDong_Click" HorizontalAlignment="Left" Margin="163,187,0,0" VerticalAlignment="Top" Width="75" Height="30" Background="#FFA3C3EC"/>
         <Label Content="Chỉ số đọc công tơ" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
         <Label Content="Số ngày, tháng đọc sản lượng" HorizontalAlignment="Left" Margin="21,63,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
         <Label Content="Ngày bắt đầu đọc" HorizontalAlignment="Left" Margin="19,116,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>

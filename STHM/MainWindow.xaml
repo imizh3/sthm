@@ -147,7 +147,7 @@
                     </FlowDocument>
                 </RichTextBox>
             </Grid>
-            <dxe:ComboBoxEdit x:Name="cboTASKNAME" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="219" Grid.Column="1" Grid.Row="1"/>
+            <dxe:ComboBoxEdit x:Name="cboTASKNAME" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="219" Grid.Column="1" Grid.Row="1" EditValueChanged="cboTASKNAME_EditValueChanged"/>
             <dxe:DateEdit x:Name="dtpickerStartfrom" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="178" MaskUseAsDisplayFormat="True" MinValue="01/01/2021 00:00:00" Grid.Column="1" Grid.Row="1" EditValueChanged="dtpickerStartfrom_EditValueChanged" MaskBeepOnError="True" Mask="dd/MM/yyyy hh:mm tt" MaskType="DateTimeAdvancingCaret"/>
             <Button x:Name="btnXem" Content="Xem" Grid.Column="1" Margin="438,10,0,0" Grid.Row="1" Background="#FFA3C3EC" Click="btnXem_Click" HorizontalAlignment="Left" Width="75" Height="22" VerticalAlignment="Top"/>
         </Grid>

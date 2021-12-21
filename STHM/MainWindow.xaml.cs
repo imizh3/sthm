@@ -1665,18 +1665,25 @@ namespace STHM
                 //        para.StartDate = DateTime.Now;
                 //    }
                 //}
-                if (TaskBuffer.ContainsKey(lineid))
-                {
-                    TaskInfo[] TaskBufferItems = TaskBuffer[lineid].ToArray();
-                    TaskBuffer[lineid].Clear();
-                    TaskBuffer[lineid].Enqueue(para);
-                    TaskInfo[] array = TaskBufferItems;
-                    TaskInfo[] array2 = array;
-                    TaskInfo[] array3 = array2;
-                    foreach (TaskInfo item in array3)
+                try {
+                    if (TaskBuffer.ContainsKey(lineid))
                     {
-                        TaskBuffer[lineid].Enqueue(item);
+                        TaskInfo[] TaskBufferItems = TaskBuffer[lineid].ToArray();
+                        TaskBuffer[lineid].Clear();
+                        TaskBuffer[lineid].Enqueue(para);
+                        TaskInfo[] array = TaskBufferItems;
+                        TaskInfo[] array2 = array;
+                        TaskInfo[] array3 = array2;
+                        foreach (TaskInfo item in array3)
+                        {
+                            TaskBuffer[lineid].Enqueue(item);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Thông báo!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    continue;
                 }
             }
         }
@@ -2367,6 +2374,20 @@ namespace STHM
                     highlightedSeries.LineStyle = new LineStyle() { Thickness = 3 };
                     highlightedSeries = null;
                 }
+            }
+        }
+
+        private void cboTASKNAME_EditValueChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (cboTASKNAME.EditValue == "ReadLoadProfile_A0")
+            {
+                dtpickerStartfrom.MaxValue = DateTime.Now.AddDays(-1);
+                dtpickerStartfrom.EditValue = DateTime.Now.AddDays(-1);
+            }
+            else
+            {
+                dtpickerStartfrom.MaxValue = new DateTime(DateTime.Now.Year, 12, 31);
+                dtpickerStartfrom.EditValue = DateTime.Now;
             }
         }
 
